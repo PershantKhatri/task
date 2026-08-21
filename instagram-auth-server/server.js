@@ -3,14 +3,8 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(
-    cors({
-        origin: "https://instagram-fronted-kesl1sbc2-khatri6.vercel.app/",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-        credentials: true
-    })
-);
+// Yeh line har tarah ke frontend origin aur trailing slash ke maslay ko khatam kar degi
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
