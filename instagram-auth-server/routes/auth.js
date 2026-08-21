@@ -1,8 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const fs = require('fs');
+const path = require('path');
 
-const users = [];
+const filePath = path.join(__dirname, '../users.json');
+
+const getUsers = () => {
+    if (fs.existsSync(filePath)) {
+        const fileData = fs.readFileSync(filePath, 'utf8');
+        try {
+            return JSON.parse(fileData || '[]');
+        } catch (err) {
+            return [];
+        }
+    }
+    return [];
+};
+
+const saveUsers = (users) => {
+    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+};
 
 router.post('/signup', async (req, res) => {
     const { email, fullname, username, password } = req.body;
@@ -13,6 +31,7 @@ router.post('/signup', async (req, res) => {
         });
     }
 
+    const users = getUsers();
     const existingUser = users.find(u => u.email === email || u.username === username);
     if (existingUser) {
         return res.status(400).json({
@@ -24,6 +43,7 @@ router.post('/signup', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     users.push({ email, fullname, username, password: hashedPassword });
+    saveUsers(users);
 
     res.status(200).json({ 
         message: "Account Created successfully." 
@@ -40,6 +60,7 @@ router.post('/login', async (req, res) => {
         });
     }
 
+    const users = getUsers();
     const user = users.find(u => u.email === identifier || u.username === identifier);
 
     if (!user) {

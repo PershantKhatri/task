@@ -3,7 +3,6 @@ const cors = require("cors");
 
 const app = express();
 
-// Yeh line har tarah ke frontend origin aur trailing slash ke maslay ko khatam kar degi
 app.use(cors());
 
 app.use(express.json());
