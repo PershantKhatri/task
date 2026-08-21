@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../footer/Footer';
 import './Login.css';
 
 function Login({ onSwitchToSignup }) {
@@ -40,56 +41,61 @@ function Login({ onSwitchToSignup }) {
   };
 
   return (
-    <div className="ig-login-box">
-      <h2 className="ig-login-title">Log into Instagram</h2>
+    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="ig-login-box">
+        <h2 className="ig-login-title">Log into Instagram</h2>
 
-      {message && (
-        <p style={{ color: message.includes('Successfully') ? 'green' : 'red', fontSize: '14px', marginBottom: '15px', textAlign: 'center' }}>
-          {message}
-        </p>
-      )}
+        {message && (
+          <p style={{ color: message.includes('Successfully') ? 'green' : 'red', fontSize: '14px', marginBottom: '15px', textAlign: 'center' }}>
+            {message}
+          </p>
+        )}
 
-      <form className="ig-login-form" onSubmit={handleSubmit}>
-        <div className="ig-input-group">
-          <input 
-            type="text" 
-            name="emailOrPhone"
-            placeholder="Mobile number, username or email" 
-            value={formData.emailOrPhone}
-            onChange={handleChange}
-            required 
-          />
+        <form className="ig-login-form" onSubmit={handleSubmit}>
+          <div className="ig-input-group">
+            <input 
+              type="text" 
+              name="emailOrPhone"
+              placeholder="Mobile number, username or email" 
+              value={formData.emailOrPhone}
+              onChange={handleChange}
+              required 
+            />
+          </div>
+          <div className="ig-input-group">
+            <input 
+              type="password" 
+              name="password"
+              placeholder="Password" 
+              value={formData.password}
+              onChange={handleChange}
+              required 
+            />
+          </div>
+          <button type="submit" className="ig-login-submit-btn">Log in</button>
+        </form>
+
+        <div className="ig-forgot-container">
+          <a href="#forgot" onClick={(e) => e.preventDefault()}>Forgot password?</a>
         </div>
-        <div className="ig-input-group">
-          <input 
-            type="password" 
-            name="password"
-            placeholder="Password" 
-            value={formData.password}
-            onChange={handleChange}
-            required 
-          />
+        <div className="ig-divider">
+          <span>OR</span>
         </div>
-        <button type="submit" className="ig-login-submit-btn">Log in</button>
-      </form>
+        <button className="ig-fb-btn" onClick={(e) => e.preventDefault()}>
+          <span className="ig-fb-icon">f</span> Log in with Facebook
+        </button>
+        
+        <button className="ig-create-account-btn" onClick={onSwitchToSignup}>
+          Create new account
+        </button>
+        
+        <div className="ig-meta-footer">
+          <span>Meta</span>
+        </div>
+      </div>
 
-      <div className="ig-forgot-container">
-        <a href="#forgot" onClick={(e) => e.preventDefault()}>Forgot password?</a>
-      </div>
-      <div className="ig-divider">
-        <span>OR</span>
-      </div>
-      <button className="ig-fb-btn" onClick={(e) => e.preventDefault()}>
-        <span className="ig-fb-icon">f</span> Log in with Facebook
-      </button>
-      
-      <button className="ig-create-account-btn" onClick={onSwitchToSignup}>
-        Create new account
-      </button>
-      
-      <div className="ig-meta-footer">
-        <span>Meta</span>
-      </div>
+      {/* Login component ke andar footer */}
+      <Footer />
     </div>
   );
 }

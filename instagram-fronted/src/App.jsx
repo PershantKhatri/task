@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
+import Footer from './components/footer/Footer';
 import './App.css';
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
           </div>
         </div>
 
-        
+        {/* Right Column */}
         <div className="ig-right-col">
           {view === 'landing' && (
             <div className="ig-card-box">
@@ -53,7 +54,6 @@ function App() {
                 Get the full experience with the tablet app
               </h2>
               
-        
               <button className="ig-action-btn" onClick={() => setView('login')}>
                 Open Instagram
               </button>
@@ -92,6 +92,8 @@ function App() {
         </div>
 
       </div>
+
+      <Footer />
     </div>
   );
 }
