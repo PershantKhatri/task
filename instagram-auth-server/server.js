@@ -3,12 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
-// CORS for all origins (Production & Local)
 app.use(
     cors({
-        origin: "*",
+        origin: "https://instagram-fronted-kes1sbc2-khatri6.vercel.app",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"]
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true
     })
 );
 
@@ -25,4 +25,4 @@ app.get("/", (req, res) => {
     });
 });
 
-module.exports = app;
+module.exports = app
