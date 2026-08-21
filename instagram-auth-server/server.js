@@ -1,19 +1,28 @@
-const express = require('express');
-const cors = require('cors'); // 1. CORS import karein
-const app = express();
-const PORT = process.env.PORT || 3000;
+const express = require("express");
+const cors = require("cors");
 
-// 2. CORS middleware enable karein taake frontend se request block na ho
-app.use(cors());
+const app = express();
+
+app.use(
+    cors({
+        origin: "https://instagram-fronted-kes1sbc2-khatri6.vercel.app",
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true
+    })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const authRoutes = require('./routes/auth');
-app.use('/api/auth', authRoutes);
+const authRoutes = require("./routes/auth");
 
-// 3. Local server run karne ke liye direct app.listen lagayein
-app.listen(PORT, () => {
-    console.log(`Server is running smoothly on http://localhost:${PORT}`);
+app.use("/api/auth", authRoutes);
+
+app.get("/", (req, res) => {
+    res.json({
+        message: "Instagram Auth Server is running"
+    });
 });
 
 module.exports = app;
