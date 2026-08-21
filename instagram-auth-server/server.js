@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "https://instagram-fronted-kes1sbc2-khatri6.vercel.app",
+        origin: "https://instagram-fronted-kesl1sbc2-khatri6.vercel.app/",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true
