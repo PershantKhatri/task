@@ -3,12 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
+// CORS for all origins (Production & Local)
 app.use(
     cors({
-        origin: "https://instagram-fronted-kes1sbc2-khatri6.vercel.app",
+        origin: "*",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-        credentials: true
+        allowedHeaders: ["Content-Type", "Authorization"]
     })
 );
 
