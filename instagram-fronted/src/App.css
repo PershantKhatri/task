@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #262626;
+}
+
+.ig-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.ig-main-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.ig-left-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-right: 1px solid #dbdbdb;
+  min-height: 100vh;
+}
+
+.ig-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 520px;
+}
+
+.ig-heading {
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #262626;
+  margin-bottom: 30px;
+}
+
+.ig-pink-text {
+  color: #d62976;
+  font-weight: 400;
+}
+
+.ig-graphic-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ig-mockup-graphic {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+}
+
+.ig-right-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.ig-card-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.ig-camera-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+  object-fit: contain;
+}
+
+.ig-card-text {
+  font-size: 26px;
+  font-weight: 400;
+  color: #262626;
+  margin-bottom: 30px;
+  line-height: 1.35;
+  padding: 0 10px;
+}
+
+.ig-action-btn {
+  width: 100%;
+  max-width: 320px;
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background-color 0.2s ease;
+}
+
+.ig-action-btn:hover {
+  background-color: #1877f2;
+}
+
+.ig-bottom-links {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ig-bottom-links a {
+  color: #0095f6;
+  text-decoration: none;
+}
+
+.ig-bottom-links a:hover {
+  text-decoration: underline;
+}
+
+.ig-or {
+  color: #8e8e8e;
+  margin: 0 6px;
+}
+
+@media (max-width: 900px) {
+  .ig-main-wrapper {
+    flex-direction: column;
+  }
+
+  .ig-left-col {
+    border-right: none;
+    border-bottom: 1px solid #dbdbdb;
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .ig-right-col {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .ig-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .ig-card-text {
+    font-size: 22px;
+  }
+}

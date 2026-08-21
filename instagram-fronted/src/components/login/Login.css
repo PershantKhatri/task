@@ -1,0 +1,202 @@
+.ig-login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
+}
+
+.ig-login-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 24px;
+  align-self: flex-start;
+}
+
+.ig-login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ig-input-group {
+  width: 100%;
+}
+
+.ig-input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #262626;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ig-input-group input:focus {
+  border-color: #a8a8a8;
+}
+
+.ig-login-submit-btn {
+  width: 100%;
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.ig-login-submit-btn:hover {
+  background-color: #1877f2;
+}
+
+.ig-forgot-container {
+  margin: 20px 0;
+}
+
+.ig-forgot-container a {
+  font-size: 12px;
+  color: #00376b;
+  text-decoration: none;
+}
+
+.ig-forgot-container a:hover {
+  text-decoration: underline;
+}
+
+.ig-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0 20px 0;
+  color: #8e8e8e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ig-divider::before,
+.ig-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.ig-divider span {
+  padding: 0 18px;
+}
+
+.ig-fb-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #385185;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ig-fb-icon {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 8px;
+  color: #385185;
+}
+
+.ig-create-account-btn {
+  width: 100%;
+  background: #ffffff;
+  color: #0095f6;
+  border: 1px solid #0095f6;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: background-color 0.2s ease;
+}
+
+.ig-create-account-btn:hover {
+  background-color: rgba(0, 149, 246, 0.05);
+}
+
+.ig-meta-footer {
+  font-size: 12px;
+  color: #8e8e8e;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.ig-fb-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #385185; 
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 6px 0;
+  transition: opacity 0.2s ease;
+}
+
+.ig-fb-btn:hover {
+  opacity: 0.75; 
+  background: none;
+}
+
+.ig-fb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: #385185; 
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11px;
+}
+.ig-meta-footer {
+  font-size: 12px;
+  color: #0064e0; 
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+@media (max-width: 480px) {
+  .ig-login-box {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .ig-login-title {
+    font-size: 20px;
+    align-self: center; 
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .ig-input-group input {
+    padding: 10px 12px;
+  }
+}
